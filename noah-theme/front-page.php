@@ -8,8 +8,8 @@ get_header();
             <h1>Timeless pieces for modern heirlooms.</h1>
             <p>Luxury jewelry crafted to echo the warmth of heritage and the precision of modern design. Discover diamonds, gold, and bespoke pieces curated with the Noah brand aesthetic.</p>
             <div class="hero-actions">
-                <a href="#shop" class="btn btn-primary">Shop Collection</a>
-                <a href="#story" class="btn btn-secondary">Our Story</a>
+                <a href="#shop" class="btn btn-primary">Shop collection</a>
+                <a href="#story" class="btn btn-secondary">Our story</a>
             </div>
         </div>
 
@@ -33,7 +33,7 @@ get_header();
 <section class="section" id="shop">
     <div class="container">
         <div class="section-head">
-            <span class="eyebrow" style="color: var(--noah-gold); background: rgba(202, 161, 109, 0.08); border-color: rgba(202, 161, 109, 0.2);">Shop by category</span>
+            <span class="eyebrow" style="color: var(--noah-primary); background: rgba(202, 161, 109, 0.08); border-color: rgba(202, 161, 109, 0.2);">Shop by category</span>
             <h2>Crafted for every moment.</h2>
             <p>Explore signature selections built around rare stones, refined silhouettes, and enduring craftsmanship.</p>
         </div>
@@ -64,7 +64,7 @@ get_header();
 <section class="section" id="story">
     <div class="container featured-layout">
         <div class="featured-copy">
-            <span class="eyebrow" style="color: var(--noah-gold); background: rgba(202, 161, 109, 0.08); border-color: rgba(202, 161, 109, 0.2);">Why Noah</span>
+            <span class="eyebrow" style="color: var(--noah-primary); background: rgba(202, 161, 109, 0.08); border-color: rgba(202, 161, 109, 0.2);">Why Noah</span>
             <h2>Luxury, precision, and a story worth keeping.</h2>
             <ul class="featured-list">
                 <li>Ethically sourced stones and masterfully finished metalwork.</li>
@@ -85,7 +85,7 @@ get_header();
 <section class="section">
     <div class="container">
         <div class="section-head">
-            <span class="eyebrow" style="color: var(--noah-gold); background: rgba(202, 161, 109, 0.08); border-color: rgba(202, 161, 109, 0.2);">Best sellers</span>
+            <span class="eyebrow" style="color: var(--noah-primary); background: rgba(202, 161, 109, 0.08); border-color: rgba(202, 161, 109, 0.2);">Best sellers</span>
             <h2>Signature pieces loved by collectors.</h2>
         </div>
 
@@ -145,7 +145,7 @@ get_header();
     <div class="container story-block">
         <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1000&q=80" alt="Jewelry craftsmanship" />
         <div class="story-copy">
-            <span class="eyebrow" style="color: var(--noah-gold); background: rgba(202, 161, 109, 0.08); border-color: rgba(202, 161, 109, 0.2);">Our story</span>
+            <span class="eyebrow" style="color: var(--noah-primary); background: rgba(202, 161, 109, 0.08); border-color: rgba(202, 161, 109, 0.2);">Our story</span>
             <h2>Every piece is designed to feel personal.</h2>
             <p>Noah blends heritage craftsmanship with contemporary luxury. Our pieces are developed to carry both beauty and meaning, created for life’s most meaningful milestones.</p>
             <div class="metrics">
@@ -160,7 +160,7 @@ get_header();
 <section class="section">
     <div class="container">
         <div class="section-head">
-            <span class="eyebrow" style="color: var(--noah-gold); background: rgba(202, 161, 109, 0.08); border-color: rgba(202, 161, 109, 0.2);">Testimonials</span>
+            <span class="eyebrow" style="color: var(--noah-primary); background: rgba(202, 161, 109, 0.08); border-color: rgba(202, 161, 109, 0.2);">Testimonials</span>
             <h2>What our clients say.</h2>
         </div>
         <div class="testimonials">
@@ -185,7 +185,7 @@ get_header();
         <div class="cta-wrap">
             <h2>Design your next heirloom.</h2>
             <p>Start with a custom consultation and create a piece curated to the moments that matter most.</p>
-            <a href="#" class="btn btn-primary">Book a Consultation</a>
+            <a href="#" class="btn btn-primary">Book a consultation</a>
         </div>
     </div>
 </section>

@@ -1,20 +1,16 @@
-<?php
-if (is_front_page()) {
-    get_template_part('front-page');
-    return;
+body { background: #f6f1ea; }
+
+.site-content .entry-content p,
+.site-content .entry-content li { color: #5b5b5b; }
+
+.noah-demo-import-button {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 12px 20px;
+    border-radius: 999px;
+    background: #caa16d;
+    color: #111;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
 }
-get_header();
-?>
-<div class="container entry-content">
-    <?php if (have_posts()) : ?>
-        <?php while (have_posts()) : the_post(); ?>
-            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                <?php the_excerpt(); ?>
-            </article>
-        <?php endwhile; ?>
-    <?php else : ?>
-        <p><?php esc_html_e('No posts found.', 'noah-theme'); ?></p>
-    <?php endif; ?>
-</div>
-<?php get_footer(); ?>

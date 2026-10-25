@@ -2,13 +2,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const cards = document.querySelectorAll('.product-card, .category-card, .testimonial, .trust-item');
 
     cards.forEach((card) => {
-        card.addEventListener('mouseenter', () => {
+        card.addEventListener('mouseenter', function () {
             card.style.transform = 'translateY(-6px)';
             card.style.transition = 'transform 0.2s ease, box-shadow 0.2s ease';
             card.style.boxShadow = '0 24px 44px rgba(20,20,20,0.12)';
         });
 
-        card.addEventListener('mouseleave', () => {
+        card.addEventListener('mouseleave', function () {
             card.style.transform = 'translateY(0)';
             card.style.boxShadow = 'none';
         });
