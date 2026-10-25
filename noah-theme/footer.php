@@ -1,54 +1,40 @@
 <?php
-?>
-</main>
-<footer class="footer" role="contentinfo">
+?><!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php wp_head(); ?>
+</head>
+<body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
+<header class="site-header" role="banner">
     <div class="container">
-        <div class="footer-grid">
-            <div>
-                <div class="brand" style="color: white; margin-bottom: 16px;">
+        <div class="brand">
+            <a href="<?php echo esc_url(home_url('/')); ?>" aria-label="<?php bloginfo('name'); ?>">
+                <?php if (has_custom_logo()) : ?>
+                    <?php the_custom_logo(); ?>
+                <?php else : ?>
                     <span class="brand-mark">N</span>
-                    <span><?php bloginfo('name'); ?></span>
-                </div>
-                <p><?php bloginfo('description'); ?></p>
-            </div>
-
-            <div>
-                <h4>Shop</h4>
-                <ul>
-                    <li><a href="#">New Arrivals</a></li>
-                    <li><a href="#">Rings</a></li>
-                    <li><a href="#">Necklaces</a></li>
-                    <li><a href="#">Gold</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Track Order</a></li>
-                    <li><a href="#">Shipping</a></li>
-                    <li><a href="#">Returns</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4>Follow</h4>
-                <ul>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">Pinterest</a></li>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Email</a></li>
-                </ul>
-            </div>
+                    <span><?php echo esc_html(get_theme_mod('noah_brand_name', 'NOAH')); ?></span>
+                <?php endif; ?>
+            </a>
         </div>
 
-        <div class="footer-bottom">
-            <span>© <?php echo esc_html(date('Y')); ?> <?php bloginfo('name'); ?>. All rights reserved.</span>
-            <span>Crafted for luxury design.</span>
+        <nav class="site-nav" aria-label="Primary navigation">
+            <?php
+            wp_nav_menu(array(
+                'theme_location' => 'primary',
+                'container' => false,
+                'fallback_cb' => false,
+            ));
+            ?>
+        </nav>
+
+        <div class="header-tools" aria-label="Header tools">
+            <a href="#" class="icon-button">Wishlist</a>
+            <a href="#" class="icon-button">Cart (0)</a>
         </div>
     </div>
-</footer>
-<?php wp_footer(); ?>
-</body>
-</html>
+</header>
+<main id="content" class="site-content">

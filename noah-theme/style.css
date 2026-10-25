@@ -1,702 +1,270 @@
-/*
-Theme Name: Noah Theme
-Theme URI: https://github.com/islamsharaf1050/full-noah-figma-design-
-Author: Copilot
-Author URI: https://github.com
-Description: Luxury jewelry storefront theme inspired by the Noah Figma references in this repository. Built to be fully editable with Elementor Pro and compatible with WordPress 7+.
-Version: 2.0.0
-Requires at least: 7.0
-Tested up to: 6.7
-Requires PHP: 7.4
-Text Domain: noah-theme
-*/
-
-:root {
-  --noah-primary: #caa16d;
-  --noah-primary-dark: #a67d44;
-  --noah-ink: #1b1b1b;
-  --noah-ink-soft: #333;
-  --noah-bg: #f6f1ea;
-  --noah-surface: #ffffff;
-  --noah-surface-alt: #f2ece4;
-  --noah-muted: #6b6b6b;
-  --noah-border: rgba(27, 27, 27, 0.08);
-  --noah-shadow: 0 22px 50px rgba(20, 20, 20, 0.08);
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: "Segoe UI", sans-serif;
-  color: var(--noah-ink);
-  background: var(--noah-bg);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-button,
-input,
-textarea,
-select {
-  font: inherit;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-.container {
-  width: min(1180px, calc(100% - 32px));
-  margin: 0 auto;
-}
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  background: rgba(246, 241, 234, 0.95);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--noah-border);
-}
-
-.site-header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 82px;
-  gap: 20px;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 1.55rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-.brand-mark {
-  width: 42px;
-  height: 42px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--noah-primary), #f5dfb6);
-  color: var(--noah-ink);
-  font-size: 1.1rem;
-  box-shadow: var(--noah-shadow);
-}
-
-.site-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 28px;
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--noah-ink-soft);
-}
-
-.site-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 22px;
-}
-
-.site-nav li {
-  position: relative;
-}
-
-.site-nav a {
-  position: relative;
-  padding-bottom: 6px;
-}
-
-.site-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 1px;
-  background: var(--noah-primary);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.25s ease;
-}
-
-.site-nav a:hover::after,
-.site-nav a:focus::after {
-  transform: scaleX(1);
-}
-
-.header-tools {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.icon-button {
-  padding: 10px 18px;
-  border-radius: 999px;
-  border: 1px solid var(--noah-border);
-  background: rgba(255, 255, 255, 0.7);
-}
-
-.site-content {
-  min-height: 60vh;
-}
-
-.hero {
-  padding: 80px 0 50px;
-  background:
-    linear-gradient(90deg, rgba(20, 20, 20, 0.58), rgba(20, 20, 20, 0.18)),
-    url("https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
-  color: white;
-}
-
-.hero .container {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  align-items: center;
-  gap: 42px;
-}
-
-.hero-copy {
-  max-width: 620px;
-}
-
-.eyebrow {
-  display: inline-block;
-  margin-bottom: 16px;
-  padding: 8px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  font-size: 0.72rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-.hero h1 {
-  margin: 0 0 18px;
-  font-size: clamp(2.8rem, 5vw, 5.4rem);
-  line-height: 0.96;
-  letter-spacing: -0.06em;
-}
-
-.hero p {
-  margin: 0 0 28px;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1.05rem;
-}
-
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  padding: 16px 28px;
-  border: 1px solid transparent;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-}
-
-.btn-primary {
-  background: var(--noah-primary);
-  color: #17140c;
-  box-shadow: 0 18px 30px rgba(202, 161, 109, 0.35);
-}
-
-.btn-secondary {
-  background: transparent;
-  border-color: rgba(255, 255, 255, 0.32);
-  color: white;
-}
-
-.hero-card {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  padding: 18px;
-  border-radius: 28px;
-  box-shadow: var(--noah-shadow);
-}
-
-.hero-card img {
-  border-radius: 22px;
-  min-height: 520px;
-  object-fit: cover;
-}
-
-.section {
-  padding: 90px 0;
-}
-
-.section-head {
-  text-align: center;
-  margin-bottom: 42px;
-}
-
-.section-head h2 {
-  margin: 0 0 12px;
-  font-size: clamp(2rem, 3vw, 3rem);
-  letter-spacing: -0.04em;
-}
-
-.section-head p {
-  margin: 0 auto;
-  max-width: 680px;
-  color: var(--noah-muted);
-}
-
-.trust-bar {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
-}
-
-.trust-item {
-  background: white;
-  border: 1px solid var(--noah-border);
-  border-radius: 18px;
-  padding: 26px 18px;
-  text-align: center;
-  box-shadow: 0 14px 26px rgba(20, 20, 20, 0.04);
-}
-
-.trust-item strong {
-  display: block;
-  font-size: 2rem;
-  margin-bottom: 8px;
-}
-
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 26px;
-}
-
-.category-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 24px;
-  min-height: 340px;
-  background-size: cover;
-  background-position: center;
-  box-shadow: var(--noah-shadow);
-}
-
-.category-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.68));
-}
-
-.category-card .content {
-  position: absolute;
-  left: 24px;
-  right: 24px;
-  bottom: 20px;
-  z-index: 1;
-  color: white;
-}
-
-.category-card h3 {
-  margin: 0;
-  font-size: 1.7rem;
-}
-
-.category-card span {
-  display: inline-block;
-  margin-top: 12px;
-  font-size: 0.75rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.featured-layout {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 34px;
-  align-items: center;
-}
-
-.featured-copy h2 {
-  margin-top: 0;
-  font-size: clamp(2.2rem, 4vw, 3.6rem);
-  letter-spacing: -0.05em;
-}
-
-.featured-list {
-  margin: 28px 0 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 16px;
-}
-
-.featured-list li {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  color: var(--noah-muted);
-}
-
-.featured-list li::before {
-  content: "✓";
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: rgba(202, 161, 109, 0.14);
-  color: var(--noah-primary);
-  font-weight: 700;
-}
-
-.featured-visual {
-  position: relative;
-  min-height: 520px;
-  border-radius: 30px;
-  overflow: hidden;
-  box-shadow: var(--noah-shadow);
-  background: url("https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=80") center/cover no-repeat;
-}
-
-.featured-badge {
-  position: absolute;
-  right: 18px;
-  bottom: 18px;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 18px 22px;
-  border-radius: 18px;
-  box-shadow: var(--noah-shadow);
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 24px;
-}
-
-.product-card {
-  background: white;
-  border: 1px solid var(--noah-border);
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 18px 30px rgba(20, 20, 20, 0.04);
-}
-
-.product-card img {
-  width: 100%;
-  height: 310px;
-  object-fit: cover;
-}
-
-.product-meta {
-  padding: 18px 18px 22px;
-}
-
-.product-meta .tag {
-  display: inline-block;
-  margin-bottom: 10px;
-  color: var(--noah-primary);
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.product-meta h3 {
-  margin: 0 0 8px;
-  font-size: 1.12rem;
-}
-
-.product-meta .price-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 12px;
-}
-
-.price-row strong {
-  font-size: 1.25rem;
-}
-
-.rating {
-  color: var(--noah-primary);
-  letter-spacing: 0.12em;
-}
-
-.story-block {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  align-items: center;
-}
-
-.story-block img {
-  min-height: 430px;
-  border-radius: 28px;
-  object-fit: cover;
-  box-shadow: var(--noah-shadow);
-}
-
-.story-copy h2 {
-  margin-top: 0;
-  font-size: clamp(2rem, 3vw, 3rem);
-  letter-spacing: -0.04em;
-}
-
-.story-copy p {
-  color: var(--noah-muted);
-}
-
-.metrics {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  margin-top: 32px;
-}
-
-.metrics div {
-  background: white;
-  border: 1px solid var(--noah-border);
-  border-radius: 18px;
-  padding: 22px;
-}
-
-.metrics strong {
-  display: block;
-  font-size: 2rem;
-}
-
-.testimonials {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-}
-
-.testimonial {
-  background: white;
-  border: 1px solid var(--noah-border);
-  border-radius: 22px;
-  padding: 28px 24px;
-  box-shadow: 0 18px 30px rgba(20, 20, 20, 0.03);
-}
-
-.testimonial p {
-  color: var(--noah-muted);
-}
-
-.testimonial strong {
-  display: block;
-  margin-top: 16px;
-}
-
-.cta-wrap {
-  background: linear-gradient(135deg, #171717, #241d17);
-  color: white;
-  border-radius: 32px;
-  padding: 56px 38px;
-  text-align: center;
-  box-shadow: var(--noah-shadow);
-}
-
-.cta-wrap h2 {
-  margin: 0 0 16px;
-  font-size: clamp(2rem, 3vw, 3rem);
-}
-
-.cta-wrap p {
-  margin: 0 auto 28px;
-  max-width: 650px;
-  color: rgba(255, 255, 255, 0.76);
-}
-
-.footer {
-  padding: 36px 0 50px;
-  background: #121212;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr 0.8fr 1fr;
-  gap: 32px;
-}
-
-.footer h4 {
-  color: white;
-  margin: 0 0 14px;
-  font-size: 0.9rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.footer ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 8px;
-}
-
-.footer-bottom {
-  margin-top: 30px;
-  padding-top: 22px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  font-size: 0.82rem;
-}
-
-.entry-content,
-.page-content,
-.post-content {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 60px 0;
-}
-
-.page-header {
-  padding: 80px 0 30px;
-  text-align: center;
-}
-
-.page-header h1 {
-  margin: 0;
-  font-size: clamp(2.2rem, 4vw, 3.8rem);
-  letter-spacing: -0.05em;
-}
-
-article {
-  padding: 0 0 40px;
-}
-
-article h2,
-article h3 {
-  letter-spacing: -0.04em;
-}
-
-article p,
-article li {
-  color: var(--noah-muted);
-}
-
-@media (max-width: 980px) {
-  .site-nav {
-    display: none;
-  }
-
-  .hero .container,
-  .featured-layout,
-  .story-block,
-  .footer-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .product-grid,
-  .category-grid,
-  .trust-bar,
-  .metrics,
-  .testimonials {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 600px) {
-  .product-grid,
-  .category-grid,
-  .trust-bar,
-  .metrics,
-  .testimonials {
-    grid-template-columns: 1fr;
-  }
-
-  .site-header .container {
-    flex-wrap: wrap;
-    padding: 16px 0;
-  }
-
-  .brand {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .header-tools {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .hero {
-    padding-top: 40px;
-  }
-}
-
-body.wp-admin {
-  background: #fff;
-}
-
-.screen-reader-text {
-  border: 0;
-  clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(50%);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap');
-
-.hero h1,
-.section-head h2,
-.story-copy h2,
-.featured-copy h2,
-.cta-wrap h2,
-.page-header h1 {
-  font-family: "Cormorant Garamond", serif;
-}
+<?php
+function noah_theme_setup() {
+    load_theme_textdomain('noah-theme', get_template_directory() . '/languages');
+
+    add_theme_support('title-tag');
+    add_theme_support('post-thumbnails');
+    add_theme_support('custom-logo');
+    add_theme_support('custom-background');
+    add_theme_support('menus');
+    add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'style', 'script'));
+    add_theme_support('responsive-embeds');
+    add_theme_support('wp-block-styles');
+    add_theme_support('editor-styles');
+    add_theme_support('woocommerce');
+    add_theme_support('wc-product-gallery-zoom');
+    add_theme_support('wc-product-gallery-lightbox');
+    add_theme_support('wc-product-gallery-slider');
+    add_theme_support('elementor');
+
+    register_nav_menus(array(
+        'primary' => __('Primary Menu', 'noah-theme'),
+        'footer' => __('Footer Menu', 'noah-theme'),
+    ));
+}
+add_action('after_setup_theme', 'noah_theme_setup');
+
+function noah_theme_enqueue_assets() {
+    wp_enqueue_style('noah-theme-style', get_stylesheet_uri(), array(), wp_get_theme()->get('Version'));
+    wp_enqueue_style('noah-theme-main', get_template_directory_uri() . '/assets/css/theme.css', array(), '3.0.0');
+    wp_enqueue_script('noah-theme-script', get_template_directory_uri() . '/assets/js/theme.js', array(), '3.0.0', true);
+}
+add_action('wp_enqueue_scripts', 'noah_theme_enqueue_assets');
+
+function noah_theme_get_setting($key, $default = '') {
+    $value = get_theme_mod($key, $default);
+    return $value !== '' ? $value : $default;
+}
+
+function noah_theme_body_classes($classes) {
+    $classes[] = 'noah-theme';
+    if (function_exists('elementor_theme_do_location')) {
+        $classes[] = 'elementor-enabled';
+    }
+    return $classes;
+}
+add_filter('body_class', 'noah_theme_body_classes');
+
+function noah_theme_menu_classes($classes, $item, $args) {
+    if (isset($args->theme_location) && $args->theme_location === 'primary') {
+        $classes[] = 'menu-item';
+    }
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'noah_theme_menu_classes', 10, 3);
+
+function noah_theme_register_customizer($wp_customize) {
+    $wp_customize->add_section('noah_theme_branding', array(
+        'title' => __('Noah Theme Settings', 'noah-theme'),
+        'priority' => 30,
+    ));
+
+    $colors = array(
+        'noah_primary_color' => array('label' => __('Accent Color', 'noah-theme'), 'default' => '#caa16d'),
+        'noah_bg_color' => array('label' => __('Background Color', 'noah-theme'), 'default' => '#f6f1ea'),
+        'noah_text_color' => array('label' => __('Text Color', 'noah-theme'), 'default' => '#1b1b1b'),
+        'noah_card_color' => array('label' => __('Card Color', 'noah-theme'), 'default' => '#ffffff'),
+    );
+
+    foreach ($colors as $key => $config) {
+        $wp_customize->add_setting($key, array(
+            'default' => $config['default'],
+            'sanitize_callback' => 'sanitize_hex_color',
+        ));
+        $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, $key, array(
+            'label' => $config['label'],
+            'section' => 'noah_theme_branding',
+            'settings' => $key,
+        )));
+    }
+
+    $fields = array(
+        'noah_contact_phone' => array('label' => __('Phone Number', 'noah-theme'), 'default' => '+966 55 000 0000', 'type' => 'text'),
+        'noah_contact_email' => array('label' => __('Contact Email', 'noah-theme'), 'default' => 'hello@noahjewelry.com', 'type' => 'email'),
+        'noah_brand_name' => array('label' => __('Brand Name', 'noah-theme'), 'default' => 'NOAH', 'type' => 'text'),
+        'noah_announcement_text' => array('label' => __('Announcement Bar Text', 'noah-theme'), 'default' => 'Free shipping on orders over $500', 'type' => 'text'),
+        'noah_social_instagram' => array('label' => __('Instagram URL', 'noah-theme'), 'default' => '#', 'type' => 'url'),
+        'noah_social_pinterest' => array('label' => __('Pinterest URL', 'noah-theme'), 'default' => '#', 'type' => 'url'),
+    );
+
+    foreach ($fields as $key => $config) {
+        $wp_customize->add_setting($key, array(
+            'default' => $config['default'],
+            'sanitize_callback' => $config['type'] === 'email' ? 'sanitize_email' : ($config['type'] === 'url' ? 'esc_url_raw' : 'sanitize_text_field'),
+        ));
+        $wp_customize->add_control($key, array(
+            'label' => $config['label'],
+            'section' => 'noah_theme_branding',
+            'type' => $config['type'],
+        ));
+    }
+}
+add_action('customize_register', 'noah_theme_register_customizer');
+
+function noah_theme_customizer_css() {
+    $primary = noah_theme_get_setting('noah_primary_color', '#caa16d');
+    $bg = noah_theme_get_setting('noah_bg_color', '#f6f1ea');
+    $text = noah_theme_get_setting('noah_text_color', '#1b1b1b');
+    $card = noah_theme_get_setting('noah_card_color', '#ffffff');
+
+    echo '<style type="text/css">
+        :root {
+            --noah-primary: ' . esc_attr($primary) . ';
+            --noah-bg: ' . esc_attr($bg) . ';
+            --noah-ink: ' . esc_attr($text) . ';
+            --noah-card: ' . esc_attr($card) . ';
+        }
+    </style>';
+}
+add_action('wp_head', 'noah_theme_customizer_css', 100);
+
+function noah_theme_admin_menu() {
+    add_theme_page(
+        __('Noah Theme Settings', 'noah-theme'),
+        __('Noah Theme Settings', 'noah-theme'),
+        'manage_options',
+        'noah-theme-settings',
+        'noah_theme_settings_page'
+    );
+}
+add_action('admin_menu', 'noah_theme_admin_menu');
+
+function noah_theme_settings_page() {
+    if (!current_user_can('manage_options')) {
+        return;
+    }
+
+    if (isset($_POST['noah_demo_import']) && check_admin_referer('noah_theme_demo_import_nonce', 'noah_theme_demo_import_nonce')) {
+        noah_theme_run_demo_import();
+    }
+    ?>
+    <div class="wrap">
+        <h1><?php echo esc_html__('Noah Theme Settings', 'noah-theme'); ?></h1>
+        <p><?php echo esc_html__('One-click import for the Noah storefront demo pages and shared styling controls.', 'noah-theme'); ?></p>
+
+        <form method="post">
+            <?php wp_nonce_field('noah_theme_demo_import_nonce', 'noah_theme_demo_import_nonce'); ?>
+            <p><button type="submit" name="noah_demo_import" class="button button-primary"><?php echo esc_html__('Run Demo Import', 'noah-theme'); ?></button></p>
+        </form>
+
+        <h2><?php echo esc_html__('Theme Controls', 'noah-theme'); ?></h2>
+        <p><?php echo esc_html__('Customize the Noah look from Appearance > Customize. Shared values include accent color, background color, text color, and contact data.', 'noah-theme'); ?></p>
+    </div>
+    <?php
+}
+
+function noah_theme_run_demo_import() {
+    $pages = array(
+        'Home' => 'Luxury jewelry storefront home page.',
+        'About' => 'Story, heritage, and craftsmanship overview.',
+        'Contact' => 'Customer service and inquiry page.',
+        'Shop' => 'Jewelry and precious metal collections.',
+        'Product Details' => 'One product page layout.',
+        'Cart' => 'Shopping cart overview layout.',
+        'Checkout' => 'Secure order form and delivery info.',
+        'Account' => 'Customer account overview.',
+        'Wishlist' => 'Saved items and favorites list.',
+        'Login' => 'Member login page.',
+        'Sign Up' => 'Registration page.',
+        'Forgot Password' => 'Password recovery page.',
+        'Order Confirmation' => 'Order success page.',
+        'Sell' => 'Sell your valuables page.',
+        'Buy' => 'Buy precious metals page.',
+        'Precious Metals' => 'Precious metals collection overview.',
+        'Diamond Store' => 'Diamond category page.',
+        'Jewellery Store' => 'Jewellery category page.',
+        'Price on Request' => 'Quote-based inquiry page.',
+        'Reserve Product' => 'Reserve page for premium products.',
+        'Make Offer' => 'Negotiation and proposal form.',
+        'Collection' => 'Curated collection landing page.',
+        'Gift Guide' => 'Gift ideas and occasion-based recommendations.',
+        'Blog' => 'Brand stories and editorial content.',
+        'FAQ' => 'Frequently asked questions.',
+        'Shipping & Returns' => 'Shipping and return details.',
+        'Terms & Conditions' => 'Terms and policy page.',
+        'Privacy Policy' => 'Privacy policy page.',
+        'Search Results' => 'Search results landing page.',
+        'Custom Design' => 'Custom design inquiry and consultation page.',
+        'Order Review' => 'Checkout review and summary page.',
+        'Account Wishlist' => 'Wishlist and saved items dashboard.',
+        'Checkout Confirmation' => 'Checkout completion and summary confirmation.',
+    );
+
+    $menu_name = 'Primary Menu';
+    $menu_exists = wp_get_nav_menu_object($menu_name);
+    $menu_id = $menu_exists ? $menu_exists->term_id : wp_create_nav_menu($menu_name);
+
+    $home_page_id = 0;
+    foreach ($pages as $page_title => $page_content) {
+        $page = get_page_by_title($page_title);
+        if (!$page) {
+            $page_id = wp_insert_post(array(
+                'post_title' => $page_title,
+                'post_content' => '<p>' . esc_html($page_content) . '</p>',
+                'post_status' => 'publish',
+                'post_type' => 'page',
+            ));
+
+            if ($page_title === 'Home') {
+                $home_page_id = $page_id;
+            }
+
+            if (!is_wp_error($page_id)) {
+                $menu_item_data = array(
+                    'menu-item-title' => $page_title,
+                    'menu-item-object-id' => $page_id,
+                    'menu-item-object' => 'page',
+                    'menu-item-type' => 'post_type',
+                    'menu-item-status' => 'publish',
+                );
+                wp_update_nav_menu_item($menu_id, 0, $menu_item_data);
+            }
+        }
+    }
+
+    if ($home_page_id) {
+        update_option('show_on_front', 'page');
+        update_option('page_on_front', $home_page_id);
+    }
+
+    add_action('admin_notices', function () {
+        echo '<div class="notice notice-success is-dismissible"><p>' . esc_html__('Noah demo pages import complete.', 'noah-theme') . '</p></div>';
+    });
+}
+
+function noah_theme_demo_import_notice() {
+    if (isset($_GET['page']) && $_GET['page'] === 'noah-theme-settings') {
+        echo '<div class="notice notice-info"><p>' . esc_html__('This theme includes a one-click demo import for all Noah storefront pages.', 'noah-theme') . '</p></div>';
+    }
+}
+add_action('admin_notices', 'noah_theme_demo_import_notice');
+
+function noah_theme_page_templates() {
+    return array(
+        'page-noah-home' => __('Noah Home Template', 'noah-theme'),
+        'page-noah-standard' => __('Noah Standard Template', 'noah-theme'),
+        'page-noah-shop' => __('Noah Shop Template', 'noah-theme'),
+        'page-noah-product' => __('Noah Product Template', 'noah-theme'),
+    );
+}
+
+function noah_theme_register_elementor_templates() {
+    if (function_exists('elementor_theme_do_location')) {
+        add_theme_support('elementor');
+    }
+}
+add_action('after_setup_theme', 'noah_theme_register_elementor_templates');
+
+function noah_theme_template_file($template) {
+    if (is_page_template('templates/page-noah-home.php')) {
+        return get_template_directory() . '/templates/page-noah-home.php';
+    }
+    if (is_page_template('templates/page-noah-shop.php')) {
+        return get_template_directory() . '/templates/page-noah-shop.php';
+    }
+    if (is_page_template('templates/page-noah-product.php')) {
+        return get_template_directory() . '/templates/page-noah-product.php';
+    }
+    return $template;
+}
+add_filter('template_include', 'noah_theme_template_file');

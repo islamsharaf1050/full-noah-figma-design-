@@ -1,40 +1,16 @@
-<?php
-?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
-    <meta charset="<?php bloginfo('charset'); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?php wp_head(); ?>
-</head>
-<body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<header class="site-header" role="banner">
-    <div class="container">
-        <div class="brand">
-            <a href="<?php echo esc_url(home_url('/')); ?>" aria-label="<?php bloginfo('name'); ?>">
-                <?php if (has_custom_logo()) : ?>
-                    <?php the_custom_logo(); ?>
-                <?php else : ?>
-                    <span class="brand-mark">N</span>
-                    <span><?php bloginfo('name'); ?></span>
-                <?php endif; ?>
-            </a>
-        </div>
+document.addEventListener('DOMContentLoaded', function () {
+    const interactiveCards = document.querySelectorAll('.product-card, .category-card, .testimonial, .trust-item');
 
-        <nav class="site-nav" aria-label="Primary navigation">
-            <?php
-            wp_nav_menu(array(
-                'theme_location' => 'primary',
-                'container' => false,
-                'fallback_cb' => false,
-            ));
-            ?>
-        </nav>
+    interactiveCards.forEach(function (card) {
+        card.addEventListener('mouseenter', function () {
+            card.style.transform = 'translateY(-6px)';
+            card.style.transition = 'transform 0.2s ease, box-shadow 0.2s ease';
+            card.style.boxShadow = '0 24px 44px rgba(20,20,20,0.12)';
+        });
 
-        <div class="header-tools" aria-label="Header tools">
-            <a href="#" class="icon-button">Wishlist</a>
-            <a href="#" class="icon-button">Cart (0)</a>
-        </div>
-    </div>
-</header>
-<main id="content" class="site-content">
+        card.addEventListener('mouseleave', function () {
+            card.style.transform = 'translateY(0)';
+            card.style.boxShadow = 'none';
+        });
+    });
+});

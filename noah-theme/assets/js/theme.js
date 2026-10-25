@@ -1,16 +1,35 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const cards = document.querySelectorAll('.product-card, .category-card, .testimonial, .trust-item');
+body {
+  background: #f6f1ea;
+}
 
-    cards.forEach((card) => {
-        card.addEventListener('mouseenter', function () {
-            card.style.transform = 'translateY(-6px)';
-            card.style.transition = 'transform 0.2s ease, box-shadow 0.2s ease';
-            card.style.boxShadow = '0 24px 44px rgba(20,20,20,0.12)';
-        });
+.site-content .entry-content p,
+.site-content .entry-content li {
+  color: #5d5d5d;
+}
 
-        card.addEventListener('mouseleave', function () {
-            card.style.transform = 'translateY(0)';
-            card.style.boxShadow = 'none';
-        });
-    });
-});
+.product-card,
+.category-card,
+.testimonial,
+.trust-item {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover,
+.category-card:hover,
+.testimonial:hover,
+.trust-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 44px rgba(20,20,20,0.12);
+}
+
+.noah-demo-import-button {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: #caa16d;
+  color: #111;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
